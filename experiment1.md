@@ -1,6 +1,6 @@
 # 实验一 Git和Markdown基础
 
-班级： 21计科2
+班级： 21计科02
 
 学号： B20210302208
 
@@ -138,6 +138,40 @@ origin  https://github.com/JingShil/python_course (fetch)
 origin  https://github.com/JingShil/python_course (push)
 ```
 
+命令：提交到本地仓库
+
+```bash
+git commit -m "实验一报告第一次提交"
+```
+
+显示效果如下：
+
+```bash
+[main (root-commit) cc3bcec] 实验一报告第一次提交
+ 1 file changed, 158 insertions(+)
+ create mode 100644 experiment1.md
+```
+
+命令：提交到远程仓库
+
+```bash
+git push -u origin main
+```
+
+显示效果如下：
+
+```bash
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 2.90 KiB | 1.45 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/JingShil/python_course
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'
+```
+
 
 
 **注意：不要使用截图，Markdown文档转换为Pdf格式后，截图可能会无法显示。**
@@ -147,12 +181,117 @@ origin  https://github.com/JingShil/python_course (push)
 请使用自己的语言回答下面的问题，这些问题将在实验检查时用于提问和答辩，并要求进行实际的操作。
 
 1. 什么是版本控制？使用Git作为版本控制软件有什么优点？
+   
+```
+   版本控制是一种记录文件内容变化，以便将来查阅特定版本的系统。它可以追踪文件的修改、删除和添加，并且可以在需要时恢复到特定的版本。
+```
+
+```
+   Git作为版本控制软件具有高效、灵活、安全和强大的分支管理等优点，适用于个人开发和团队协作。
+```
+
 2. 如何使用Git撤销还没有Commit的修改？如何使用Git检出（Checkout）已经以前的Commit？（实际操作）
+   
+```
+    撤销对文件的修改：
+    git checkout -- <文件名>
+```
+
+```
+    1.查看所有的commit记录：
+    git log
+
+    2.找到要检出的commit的哈希值（commit ID）。
+
+    3.检出指定的commit：
+    git checkout <commit ID>
+```
+
 3. Git中的HEAD是什么？如何让HEAD处于detached HEAD状态？（实际操作）
+   
+```
+    在Git中，HEAD是一个指向当前所在分支或提交的指针。它可以用来表示当前工作目录中的最新提交。
+```
+
+```
+    1.查看所有的commit记录：
+    git log
+
+    2.找到要进入detached HEAD状态的commit的哈希值（commit ID）。
+
+    3.运行以下命令以进入detached HEAD状态：
+    git checkout <commit ID>
+```
+
 4. 什么是分支（Branch）？如何创建分支？如何切换分支？（实际操作）
+
+```
+    分支（Branch）是Git中用于并行开发和管理代码的重要概念。它可以将代码库分割成不同的线索，每个分支都可以独立进行修改和提交，而不会影响其他分支。
+```
+
+```
+    创建分支
+    git branch <分支名>
+```
+
+```
+    切换分支
+    git checkout <分支名>
+```
+
 5. 如何合并分支？git merge和git rebase的区别在哪里？（实际操作）
+
+```
+    1.切换到目标分支：
+    git checkout <目标分支>
+
+    2.执行合并命令：
+    git merge <要合并的分支>
+```
+
 6. 如何在Markdown格式的文本中使用标题、数字列表、无序列表和超链接？（实际操作）
+
+在Markdown格式的文本中，可以使用以下语法来添加标题、数字列表、无序列表和超链接：
+
+1. 标题：
+   使用`#`符号来表示标题的级别，`#`的数量表示级别的深度。例如：
+   ```
+   # 一级标题
+   ## 二级标题
+   ### 三级标题
+   ```
+
+2. 数字列表：
+   使用数字和`.`来表示有序列表。例如：
+   ```
+   1. 第一项
+   2. 第二项
+   3. 第三项
+   ```
+
+3. 无序列表：
+   使用`-`、`+`或`*`符号来表示无序列表。例如：
+   ```
+   - 第一项
+   - 第二项
+   - 第三项
+   ```
+
+4. 超链接：
+   使用`[链接文本](链接地址)`的格式来添加超链接。例如：
+   ```
+   [GitHub](https://github.com)
+   ```
+
+
 
 ## 实验总结
 
-总结一下这次实验你学习和使用到的知识，例如：编程工具的使用、数据结构、程序语言的语法、算法、编程技巧、编程思想。
+        在本次Git实验课中，我学习了Git的基本概念和常用命令，并进行了一些 实际操作。以下是我在实验中的总结和收获：
+
+        Git的基本概念：我了解了Git的基本概念，包括仓库（Repository）、提交（Commit）、分支（Branch）和合并（Merge）等。这些概念对于理解Git的工作原理和使用方法非常重要。
+
+        Git的常用命令：我学习了一些常用的Git命令，包括初始化仓库（git init）、添加文件到暂存区（git add）、提交修改（git commit）、查看提交历史（git log）等。这些命令可以帮助我管理代码的版本和修改。
+        创建和切换分支：我学会了如何创建新的分支，并且可以在不同的分支上进行开发和修改。同时，我也学会了如何切换分支，以及如何合并分支的修改。
+
+        通过这次实验，我对Git的使用有了更深入的了解，并且掌握了一些常用的Git命令和操作技巧。我相信这些知识和技能将对我的日常开发工作和团队协作非常有帮助。我会继续学习和探索Git的更多功能和高级用法，以提升我的版本控制和代码管理能力。
