@@ -161,7 +161,7 @@ def nearest_sq(n):
 程序流程图
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[start] --> B["sqrt_n = int(math.sqrt(n)) "]
     B --> C{Is sqrt_n * sqrt_n == n}
     C --> |Yes| D[return n]
@@ -194,7 +194,7 @@ def bouncingBall(h, bounce, window):
 程序流程图
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Start] --> B{"Is not 0 < bounce < 1: return -1"}
     B --> |Yes| C{"not 0 < window < h: return -1"}
     C --> |Yes| D[count = 1]
@@ -222,7 +222,7 @@ def getCount(inputStr):
 程序流程图
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Start] --> B[num_vowels = 0]
     B --> C{"num >= inputStr && char = inputStr[num]"}
     C --> |Yes| D{"char in 'aeiou'"}
@@ -247,7 +247,7 @@ def even_or_odd(number):
 程序流程图
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Start] --> B{Is number % 2 == 0}
     B --> |Yes| C["return 'Even'"]
     B --> |No| D[return 'Odd']
